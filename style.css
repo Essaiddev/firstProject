@@ -1,0 +1,447 @@
+/* === Variables / Theme === */
+:root {
+  --primary-green: #2e7d32;
+  --primary-green-dark: #388e3c;
+  --light-bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --radius: 10px;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease;
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+/* === Global Reset & Base === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100%;
+  background-color: var(--light-bg);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-green);
+  padding: 15px 40px;
+  font-family: var(--font-main);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #f1f8e9;
+  font-weight: 500;
+  transition: color var(--transition), border-bottom var(--transition);
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links li a:hover {
+  color: #c8e6c9;
+  border-bottom: 2px solid #c8e6c9;
+}
+
+.btn-login {
+  background-color: #ffffff;
+  color: var(--primary-green);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color var(--transition), transform 0.2s ease;
+}
+
+.btn-login:hover {
+  background-color: #c8e6c9;
+  transform: scale(1.05);
+}
+
+/* === Hero / Accueil === */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url(img/WhatsApp\ Image\ 2025-06-19\ at\ 11.17.43.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 128, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.hero-content h5 {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+/* === Register / Login Shared Styles === */
+.form-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin: auto;
+}
+
+/* login-box and register-box share */
+.login-box,
+.register-box {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--card-bg);
+  padding: 30px 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: auto;
+}
+
+.login-box h1,
+.register-box h1 {
+  text-align: center;
+  color: var(--primary-green);
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+.login-box input,
+.register-box input,
+.login-box form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.login-box button,
+.register-box button,
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-green);
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.login-box button:hover,
+.register-box button:hover,
+button[type="submit"]:hover {
+  background-color: var(--primary-green-dark);
+}
+
+.login-link,
+.register-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-link a,
+.register-link a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover,
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* === À propos / PROPOS === */
+.PROPOS {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.PROPOS h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.PROPOS .subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.PROPOS p {
+  text-align: left;
+  font-size: 18px;
+  background: var(--light-bg);
+  border-left: 5px solid #4CAF50;
+  padding: 20px 30px;
+  margin: 30px auto;
+  width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-main);
+  line-height: 1.8;
+  color: #333;
+  transition: all var(--transition);
+}
+
+.PROPOS p:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* === Contact === */
+.contact-section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.contact-section h1 {
+  text-align: center;
+  font-size: 32px;
+  color: black;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-form,
+.contact-info {
+  flex: 1 1 450px;
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form h2,
+.contact-info h2 {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.contact-form button {
+  background-color: var(--primary-green);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.contact-form button:hover {
+  background-color: var(--primary-green-dark);
+}
+
+.contact-info p {
+  margin: 10px 0;
+  color: #555;
+  font-size: 15px;
+}
+
+.contact-info i {
+  color: var(--primary-green);
+  margin-right: 10px;
+}
+
+.map {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* === Layout Helpers === */
+.register-section,
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .btn-login {
+    align-self: flex-start;
+    margin-top: 10px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+}
+/* footer */
+
+.custom-footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #0a192f;
+  color: #f0f0f0;
+  padding: 60px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+  border-top: 4px solid #38b000;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  margin: 20px;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+  font-size: 20px; /* أكبر */
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.underline {
+  width: 50px;
+  height: 3px;
+  background-color: #38b000;
+  margin-bottom: 15px;
+  border-radius: 2px;
+}
+
+.footer-column p,
+.footer-column ul li {
+  font-size: 16px; /* أكبر من قبل */
+  margin-bottom: 12px;
+  color: #d3d3d3;
+  display: flex;
+  align-items: center;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column i {
+  margin-right: 10px;
+  color: #38b000;
+  min-width: 20px;
+  text-align: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 12px;
+  color: #ffffff;
+  background-color: #112240;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #38b000;
+  color: #fff;
+  transform: scale(1.1);
+}
+.footer-column ul li a {
+  color: #d3d3d3; /* نص رمادي واضح */
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #38b000; /* يصبح أخضر عند hover */
+}
+
